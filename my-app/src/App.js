@@ -1,21 +1,24 @@
 
-import logo from "./logo.svg";
 import './App.css';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+//connect app to the browser's URL: import BrowserRouter, routes, route
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+//import bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./Components/Navigation";
-import {useState} from "react";
-
-console.log("loaded");
+import Read from "./Components/Read";
+// import {useState} from "react";
 
 function App() {
   return (
+    //connect your app to the browser's URL: import 
+    //and render it around your whole app.
     <BrowserRouter>
       <Navigation />
+      {/* navigation links and routes are in ./Components/Navigation */}
+      {/* teach React Router how to render our app at different URLs by creating our first "Route Config" */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/new_blog" element={<NewBlog />} />
-        <Route path="random" element={() => <h1> Something Random</h1>} /> */}
+        <Route path="/" element={<Read />} />
+        <Route path="/new_blog" element={<NewBlog />} />
       </Routes>
     </BrowserRouter>
   );
@@ -23,29 +26,5 @@ function App() {
 
 const Home = () => <h1> You are home!!!!</h1>;
 const NewBlog = () => <h3> PLease write a new blog!!</h3>;
-
-
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;

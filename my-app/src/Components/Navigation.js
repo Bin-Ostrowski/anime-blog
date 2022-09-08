@@ -1,21 +1,23 @@
-import Nav from 'react-bootstrap/Nav';
+//inport nav and tabs from bootstap 
+import Nav from "react-bootstrap/Nav";
+//import Link
+import { Link } from "react-router-dom";
 
-function PillsExample() {
+export default function Navigation() {
   return (
     <Nav variant="pills" defaultActiveKey="/home">
-      <Nav.Item>
-        <Nav.Link href="/home">Active</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-1">Option 2</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="disabled" disabled>
-          Disabled
-        </Nav.Link>
-      </Nav.Item>
+      {/* and add some global link navigation. */}
+      <Link to="/">
+        <Nav.Item>
+          <Nav.Link href="/">Read</Nav.Link>
+        </Nav.Item>
+      </Link>
+      <Link to="/new_blog">
+        <Nav.Item>
+          <Nav.Link href="/new_blog">Write</Nav.Link>
+        </Nav.Item>
+      </Link>
     </Nav>
   );
-}
+};
 
-export default PillsExample;
