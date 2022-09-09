@@ -10,7 +10,7 @@ import Read from "./Components/Read";
 
 function App() {
   return (
-    //connect your app to the browser's URL: import 
+    //connect your app to the browser's URL: import
     //and render it around your whole app.
     <BrowserRouter>
       <Navigation />
